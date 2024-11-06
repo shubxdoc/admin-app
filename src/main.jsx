@@ -9,7 +9,7 @@ import Layout from "../Layout";
 import { Home, List, Login, New, Single } from "./pages";
 import { userInputs, productInputs } from "./formSource";
 import "./index.css";
-import { ThemeProvider } from "./context/ThemeContext";
+
 import { AuthContext, AuthProvider } from "./context/AuthContext";
 
 const RequireAuth = ({ children }) => {
@@ -105,10 +105,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );
