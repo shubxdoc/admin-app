@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test2@mail.com");
+  const [password, setPassword] = useState("abc123");
   const [error, setError] = useState(false);
 
   const navigate = useNavigate();
@@ -29,29 +29,29 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen dark:bg-darkBg dark:text-darkText font-semibold flex flex-col items-center justify-center">
-      <div className="md:max-w-md w-full px-4 py-4">
+    <div className="flex flex-col items-center justify-center min-h-screen font-semibold dark:bg-darkBg dark:text-darkText">
+      <div className="w-full px-4 py-4 md:max-w-md">
         <form onSubmit={handleLogin}>
           <div>
-            <label className="text-xs block mb-2">Email</label>
+            <label className="block mb-2 text-xs">Email</label>
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email"
-              className="w-full text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
+              className="w-full px-2 py-3 text-sm border-b border-gray-300 outline-none focus:border-blue-600"
             />
           </div>
           <div className="mt-8">
-            <label className="text-xs block mb-2">Password</label>
+            <label className="block mb-2 text-xs">Password</label>
             <input
               type="password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="w-full text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
+              className="w-full px-2 py-3 text-sm border-b border-gray-300 outline-none focus:border-blue-600"
             />
           </div>
           <div className="mt-12">
@@ -63,7 +63,7 @@ const Login = () => {
             </button>
           </div>
           {error && (
-            <div className="mt-5 text-red-400 text-xs">
+            <div className="mt-5 text-xs text-red-400">
               Wrong email or password!
             </div>
           )}
