@@ -34,6 +34,7 @@ const Widgets = ({ type }) => {
         title: "ORDERS",
         isMoney: false,
         link: "View All Orders",
+        query: "orders",
         icon: (
           <span className="p-2 text-lg text-orange-400 rounded-xl w-max bg-orange-300/30">
             <MdOutlineShoppingCartCheckout />
@@ -46,6 +47,7 @@ const Widgets = ({ type }) => {
         title: "EARNINGS",
         isMoney: true,
         link: "View Net Earnings",
+        query: "earnings",
         icon: (
           <span className="p-2 text-lg text-green-600 rounded-xl w-max bg-green-300/30">
             <MdOutlineMonetizationOn />
@@ -56,7 +58,7 @@ const Widgets = ({ type }) => {
     case "product":
       data = {
         title: "PRODUCTS",
-        query: "product",
+        query: "products",
         isMoney: true,
         link: "See Details",
         icon: (
